@@ -14,3 +14,13 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+tags
+gem.tags
+
+#Ignore other unneeded files
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
