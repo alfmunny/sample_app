@@ -60,8 +60,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "sample_app_production"
 
-  config.action_mailer.perform_caching = false
-
   config.action_mailer.delivery_method = :smtp #:smtp
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
@@ -70,14 +68,12 @@ Rails.application.configure do
 
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :user_name            => "alfmunny@gmail.com",
-    :password             => "Alfmunny891518",
-    :authentication       => "login",
-    :enable_starttls_auto => true,
-    :domain               => "smtp.gmail.com",
-    :openssl_verify_mode  => "none",
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => host,
+    :authentication => :plain,
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
