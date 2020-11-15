@@ -30,6 +30,7 @@ gem 'bcrypt', '3.1.13'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'pg', '1.2.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,9 +61,5 @@ group :test do
   gem 'guard-minitest', '2.4.6'
 end
 
-
-group :production do
-  gem 'pg', '1.2.3'
-end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
