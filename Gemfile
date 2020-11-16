@@ -64,5 +64,11 @@ group :test do
   gem 'guard-minitest', '2.4.6'
 end
 
+group :production do
+  gem 'aws-sdk-s3', '1.46.0', require: false
+end
+
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
