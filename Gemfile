@@ -31,6 +31,9 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'pg', '1.2.3'
+gem 'active_storage_validations', '0.8.9'
+gem 'image_processing',           '1.9.3'
+gem 'mini_magick',                '4.9.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

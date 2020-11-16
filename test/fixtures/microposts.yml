@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+orange:
+  content: "This is a test sentence"
+  created_at: <%= 10.minutes.ago %>
+  user: yuanchen
+
+two:
+  content: MyText
+  created_at: <%= 20.minutes.ago %>
+  user: yuanchen
+
+most_recent:
+  content: <%= Faker::Lorem.paragraph_by_chars(number: rand(1..140)) %>
+  created_at: <%= 3.minutes.ago %>
+  user: yuanchen
+
+
+

@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+def create_microposts(user, number)
+  number.times do |n| 
+    user.microposts.create(content: Faker::Lorem.paragraph_by_chars(number: rand(1..140)))
+  end
+end
+
 User.create(name: "User 1", 
             email: "alfmunny@hotmail.com", 
             password: "foobar", 
@@ -14,16 +20,20 @@ User.create(name: "User 1",
             activated_at: Time.zone.now
            )
 
+create_microposts(User.first, 50)
+
 99.times do |n| 
   name = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
-  User.create!(name: name, 
+  user = User.create(name: name, 
                email: email, 
                password: password, 
                password_confirmation: password,
                activated: true,
                activated_at: Time.zone.now
               )
+  create_microposts(user, 5)
 end
+
 
